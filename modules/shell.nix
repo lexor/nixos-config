@@ -18,7 +18,8 @@ let
     EDITOR = "nvim";
     GOBIN = "${GOPATH}/bin";
     GOPATH = "${config.xdg.configHome}/go";
-    HANDLER = "copilot";
+    RUBY_BIN = "/opt/homebrew/opt/ruby/bin";
+    HANDLER = " copilot ";
     HOMEBREW_BIN = "${HOMEBREW_PREFIX}/bin";
     HOMEBREW_CELLAR = "${HOMEBREW_PREFIX}/Cellar";
     HOMEBREW_PREFIX = "/opt/homebrew";
@@ -46,6 +47,7 @@ let
       BREW_SBIN
       HOMEBREW_BIN
       HOMEBREW_SBIN
+      RUBY_BIN
       "$PATH"
     ];
   };
@@ -68,7 +70,8 @@ let
     tksv = "tmux kill-server";
     tls = "tmux list-sessions";
 
-    df = "${tmn} -ds dotfiles -c ~/nixos-config $SHELL; ${tms} dotfiles || ${tma} dotfiles";
+    df = "${tmn} -ds dotfiles -c ~/nixos-config $SHELL;
+    ${tms} dotfiles || ${tma} dotfiles";
 
     dstroy = "fd -IH .DS_Store | xargs sudo rm";
 
@@ -105,7 +108,7 @@ let
     gtt = "go test ./...";
     gmt = "go mod tidy";
     gmu = "go get -u $(go list -m -f '{{if not .Indirect}}{{.Path}}{{end}}' all | gum filter --height 10)";
-    gme = "go mod edit -replace $(go list -m -f '{{if not .Indirect}}{{.Path}}{{end}}' all | gum filter --height 10)=$(realpath --relative-to=\"$\{PWD\}\" \"$(gum file --directory ..)\")";
+    gme = "go mod edit -replace $(go list -m -f '{{if not .Indirect}}{{.Path}}{{end}}' all | gum filter --height 10) = $(realpath - -relative-to=\"$\{PWD\}\" \"$(gum file --directory ..)\")";
 
     golint = "golangci-lint run ./...";
     golintsoft = "golangci-lint run ./... --config .golangci-soft.yml";
