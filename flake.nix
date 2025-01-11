@@ -58,6 +58,7 @@
             ./modules/pass.nix
             ./modules/starship.nix
             ./modules/tmux.nix
+            ./modules/neovim
             {
               home.username = "emredeger";
               home.stateVersion = "23.11";
