@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     jetbrains-mono
     (
-      nerdfonts.override {
+      nerd-fonts.override {
         fonts = [
           "JetBrainsMono"
         ];

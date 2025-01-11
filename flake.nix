@@ -4,7 +4,7 @@
   inputs.helix.url = "github:helix-editor/helix";
   inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
   inputs.home-manager.url = "github:nix-community/home-manager";
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/master";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.fnl.url = "path:fnl";
   inputs.fnl.flake = false;
   inputs.zls.url = "github:zigtools/zls";
@@ -46,7 +46,7 @@
             };
           modules = [
             ./modules/direnv.nix
-            ./modules/fonts.nix
+            # ./modules/fonts.nix
             ./modules/gh.nix
             ./modules/ghostty.nix
             ./modules/git.nix

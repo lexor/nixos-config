@@ -248,6 +248,8 @@ in
       %(?.%F{green}>%f.%F{red}>%f) "
       fi
 
+      eval "$(~/.local/bin/mise activate)"
+
       # secrets
       # [ -z "$COPILOT_API_KEY" ] && export COPILOT_API_KEY="$(pass COPILOT_API_KEY)"
       # [ -z "$OPENAI_API_KEY" ] && export OPENAI_API_KEY="$(pass OPENAI_API_KEY)"

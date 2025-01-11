@@ -61,8 +61,8 @@ in
       # coding
       nvim-lspconfig
       conform-nvim
-      blink-cmp
-      blink-cmp-copilot
+      # blink-cmp
+      # blink-cmp-copilot
       copilot-lua
       nvim-autopairs
       nvim-ts-autotag
