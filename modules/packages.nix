@@ -55,6 +55,13 @@ let
   linux = with pkgs; [ ];
 in
 {
+  nixpkgs = {
+     config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
+    };
+  };
+
   home.packages =
     core
     ++ (
@@ -65,7 +72,9 @@ in
 
   programs.bat.config.theme = "Nord";
   programs.bat.enable = true;
+
   programs.home-manager.enable = true;
+
   programs.taskwarrior.colorTheme = "dark-16";
   programs.taskwarrior.enable = true;
 }

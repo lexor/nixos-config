@@ -135,4 +135,8 @@ in
       vim-dadbod-completion
     ];
   };
+
+  xdg.configFile."nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink ./config;
+  };
 }
